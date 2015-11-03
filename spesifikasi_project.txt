@@ -1,0 +1,12 @@
+Spesifikasi
+Project ini menggunakan tool berikut ini:
+- HTML5
+- CSS
+- Boostrap
+- Java Script
+- JQuery
+- Ajax
+- Recomended browser: Chrome and Mozila fire fox
+- Mysql
+- Google Maps Engine (API)
+- framework (masih di bicarakan) 
