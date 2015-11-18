@@ -1,0 +1,159 @@
+<!-- for play mp3-->
+    <script>
+      $(function() {
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>
+
+
+    <div class="constainer">
+      <div id="pageContent">
+      <div class="col-md-6">
+      <h1>Lagu Daerah Asal Jambi</h1>
+      <audio load></audio>
+      <ol>
+        <li><a onclick="MajeuKincai()" href="#" data-src="mp3/1_jabar_manuk_dadali.mp3">1. Majeu Kincai</a></li>
+        <li><a onclick="DodoiSiDodoi()" href="#" data-src="mp3/2_jabar_bubuy_bulan.mp3">2. Dodoi si Dodoi</a></li>
+        <li><a onclick="BatangHari()" href="#" data-src="mp3/3_jabar_es_lilin.mp3">3. Batang Hari</a></li>
+        <li><a onclick="KetimunBungkuk()" href="#" data-src="mp3/4_jabar_cingcangkeling.mp3">4. Ketimun Bungkuk</a></li>
+        <li><a onclick="InjitInjitSemut()" href="#" data-src="mp3/5_jabar_panon_hideung.mp3">5. Injit-Injit Semut</a></li>
+        <li><a onclick="TanjungBajure()" href="#" data-src="mp3/6_jabar_warung_pojok.mp3">6. Tanjung Bajure</a></li>
+        <li><a onclick="OrangKayoHitam()" href="#" data-src="mp3/7_jabar_tokecang.mp3">7. Orang Kayo Hitam</a></li>
+	<li><a onclick="TimangTimangAnakkuSayang()" href="#" data-src="mp3/7_jabar_tokecang.mp3">8. Timang-Timang Anakku Sayang</a></li>
+      </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+        <h1>Description and Lylic</h1>
+        <div id="desciption">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Judul</h3>
+            </div>
+            <div class="panel-body">
+              Majeu Kincai
+            </div>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Pengarang</h3>
+            </div>
+            <div class="panel-body">
+              NN
+            </div>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Deskripsi</h3>
+            </div>
+            <div class="panel-body">
+            Lagu ini berisi semangat untuk membangu kerinci baik yang berada di wilayah kerinci maupun yang berada di perantauan
+            </div>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Lyric</h3>
+            </div>
+            <div class="panel-body">
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Klik Disini</button> Untuk Menampilkan Lyric
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Lyric Majeu Kincai</h4>
+                </div>
+                <div class="modal-body">
+                <br />
+		Dangealah kamai ngatoa <br />
+		Rilaok Nianglah budi kayo <br />
+		Kinai lah taro kinai <br />
+		Samo mambangun tanoh Kincai <br />
+		<br />
+		Wahai lah mandah Kincai <br />
+		Dangea kamai lah dimunyarau <br />
+		Baloik lah taro kinai <br />
+		Taro kincai sadeang mambangun <br />
+		<br />
+		Manolah kayo galo <br />
+		Dangea kamai lah dibutale <br />
+		Ngimbo kayo busamo <br />
+		Bangun Sakti Alam Kincai <br />
+		<br />
+		Baloik lah kayo baloik <br />
+		Kinai kamai lah dibugawe <br />
+		Janteang dingan butino <br />
+		Samo mambangun Ranoh Kincai <br />
+		<br />
+		Maailah dibusamo <br />
+		muo majeu lah tanoh Kincai <br />
+		Kinailah Kincai ilok <br />
+		muo ratai lah kito sanang <br />
+		<br />
+		Kimok lah dari jaeuh <br />
+		Ilok niang lah tanoh kincai <br />
+		Ilok ranyo dikimok <br />
+		Indah niang nyo dipandang <br />
+                <br />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+</div>

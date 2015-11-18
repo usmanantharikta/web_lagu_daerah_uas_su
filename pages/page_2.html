@@ -1,0 +1,185 @@
+<!-- for play mp3-->
+    <script>
+      $(function() {
+        // Setup the player to autoplay the next track
+        var a = audiojs.createAll({
+          trackEnded: function() {
+            var next = $('ol li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.addClass('playing').siblings().removeClass('playing');
+            audio.load($('a', next).attr('data-src'));
+            audio.play();
+          }
+        });
+
+        // Load in the first track
+        var audio = a[0];
+            first = $('ol a').attr('data-src');
+        $('ol li').first().addClass('playing');
+        audio.load(first);
+
+        // Load in a track on click
+        $('ol li').click(function(e) {
+          e.preventDefault();
+          $(this).addClass('playing').siblings().removeClass('playing');
+          audio.load($('a', this).attr('data-src'));
+          audio.play();
+        });
+        // Keyboard shortcuts
+        $(document).keydown(function(e) {
+          var unicode = e.charCode ? e.charCode : e.keyCode;
+             // right arrow
+          if (unicode == 39) {
+            var next = $('li.playing').next();
+            if (!next.length) next = $('ol li').first();
+            next.click();
+            // back arrow
+          } else if (unicode == 37) {
+            var prev = $('li.playing').prev();
+            if (!prev.length) prev = $('ol li').last();
+            prev.click();
+            // spacebar
+          } else if (unicode == 32) {
+            audio.playPause();
+          }
+        })
+      });
+    </script>
+
+
+    <div class="constainer">
+      <div id="pageContent">
+      <div class="col-md-6">
+      <h1>Lagu Daerah Asal Jakarta</h1>
+      <audio load></audio>
+      <ol>
+        <li><a onclick="SangBango()" href="#" data-src="mp3/1_jabar_manuk_dadali.mp3">1. Sang Bango</a></li>
+        <li><a onclick="KicirKicir()" href="#" data-src="mp3/2_jabar_bubuy_bulan.mp3">2. Kicir-Kicir</a></li>
+        <li><a onclick="KeroncongKemayoran()" href="#" data-src="mp3/3_jabar_es_lilin.mp3">3. Keroncong Kemayoran</a></li>
+        <li><a onclick="HujanGerimis()" href="#" data-src="mp3/4_jabar_cingcangkeling.mp3">4. Hujan Gerimis</a></li>
+        <li><a onclick="JaliJali()" href="#" data-src="mp3/5_jabar_panon_hideung.mp3">5. Jali-Jali</a></li>
+        <li><a onclick="LenggangLenggangKangkung()" href="#" data-src="mp3/6_jabar_warung_pojok.mp3">6. Lenggang-Lenggang Kangkung</a></li>
+        <li><a onclick="OndelOndel()" href="#" data-src="mp3/7_jabar_tokecang.mp3">7. Ondel-Ondel</a></li>
+      </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+        <h1>Description and Lylic</h1>
+        <div id="desciption">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Judul</h3>
+            </div>
+            <div class="panel-body">
+              Manuk Dadali
+            </div>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Pengarang</h3>
+            </div>
+            <div class="panel-body">
+              Benyamin S.
+            </div>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Deskripsi</h3>
+            </div>
+            <div class="panel-body">
+            Sebuah lagu anak-anak Betawi.
+            Liriknya merupakan sebuah pantun jenaka yang dinyanyikan dalam suasana riang-gembira dan biasanya
+            juga dipergunakan untuk memeriahkan permainan anak-anak.
+            </div>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Lyric</h3>
+            </div>
+            <div class="panel-body">
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Klik Disini</button> Untuk Menampilkan Lyric
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Lyric Sang Bango</h4>
+                </div>
+                <div class="modal-body">
+                  Ade-ade <br />
+                  Sekarang 'Cing Min mau jadi kodok <br />
+                  Denger ye.. <br />
+                  Uu ek.. <br />
+                  Uu ek..hehe.. <br />
+                  <br />
+                  Uu ek..hehe.. <br />
+                  Sang Bango, eh Sang Bangau <br />
+                  <br />
+                  Kenape elu, elu delak-delok? <br />
+                  Sang Bangau,,ngau,,ngau,,ngau,,eh Sang Bango <br />
+                  Kenape elu, elu delak-delok? <br />
+                  <br />
+                  Mengkenye aye, aye delak-delok <br />
+                  Sang Kodok, eh, kerak-kerok <br />
+                  Mengkenye aye, aye delak-delok <br />
+                  Sang Kodok, eh, kerak-kerok <br />
+                  <br />
+                  Sang Kodok, eh, eh, eh Sang Kodok <br />
+                  Kenape elu, elu kerak-kerok? <br />
+                  Sang Kodok, eh, eh, eh Sang Kodok <br />
+                  Kenape elu, elu kerak-kerok? <br />
+                  <br />
+                  Mengkenye aye, aye kerak-kerok <br />
+                  Orang-orang, eh, pade ngorok <br />
+                  Mengkenye aye, aye kerak-kerok <br />
+                  Orang-orang, eh, pade ngorok <br />
+                  <br />
+                  Uu ek..ek.. <br />
+                  Uu ek.. <br />
+                  Uu ek..etek-etek-etek <br />
+                  Uu ek.. <br />
+                  <br />
+                  Kaye kodok buduk<br />
+                  <br />
+                  Bang Orang, eh, eh, eh Bang Orang <br />
+                  Kenape elu, elu pade ngorok? <br />
+                  Bang Orang, eh, eh, eh Bang Orang <br />
+                  Kenape elu, elu pade ngorok? <br />
+                  <br />
+                  Mengkenye aye, aye pade ngorok <br />
+                  Sang Kodok kerak-kerok <br />
+                  Mengkenye aye, aye pade ngorok <br />
+                  Sang Kodok, eh kerak-kerok <br />
+                  (Bandel) <br />
+                  <br />
+                  Sang Kodok, eh, eh, eh Sang Kodok <br />
+                  Kenape elu, elu kerak-kerok? <br />
+                  Sang Kodok, eh, eh, eh Sang Kodok <br />
+                  Kenape elu, elu kerak-kerok? <br />
+                  <br />
+                  Mengkenye aye, aye kerak-kerok <br />
+                  Bikin musik, lagu Jailhouse ROck <br />
+                  Mengkenye aye, aye kerak-kerok <br />
+                  Bikin musik, lagu Jailhouse ROck <br />
+                  <br />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+</div>
