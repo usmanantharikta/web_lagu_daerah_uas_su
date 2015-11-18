@@ -1,47 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta content="width=device-width, initial-scale=0.6" name="viewport">
-		<title>Taman Lagu Daerah</title>
-		<!-- Styles -->
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
-		<link rel="stylesheet" href="css/main.css">
-		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/audiojs.css" rel="stylesheet">
-		<!-- javascript -->
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
-		<script type="text/javascript" src="audiojs/audio.js"></script>
-		<script type="text/javascript" src="js/ajaxdescription.js"></script>
-		<!--<script type="text/javascript" src="audiojs/jquery.js"></script>-->
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Taman Lagu Nusantara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<body>
-		<nav >
+  <!-- Styles -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/agency.css" rel="stylesheet">
+  <link href="css/audiojs.css" rel="stylesheet">
+
+  <!-- script -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="audiojs/audio.js"></script>
+  <script type="text/javascript" src="js/ajaxdescription.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script>
+        var jabar=new google.maps.LatLng(-6.9032739,107.5731165);
+        var jakarta= new google.maps.LatLng(-6.2293867,106.6894293);
+        var jateng= new google.maps.LatLng(-7.3030411,109.0019967);
+        var markerjabar;
+        function initialize()
+        {
+        var mapProp = {
+          center: new google.maps.LatLng(-2.401183, 116.543652),
+          zoom:5,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+        var markerjabar=new google.maps.Marker({
+          position:jabar,
+          animation:google.maps.Animation.BOUNCE
+          });
+        markerjabar.setMap(map);
+
+        google.maps.event.addListener(markerjabar, 'click', function() {
+          window.location.href = "#page1"
+        });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+</head>
+
+<body>
+
+    <nav>
         <ul class="list-unstyled main-menu">
+
           <!--Include your navigation here-->
           <li class="text-right"><a href="#" id="nav-close">X</a></li>
-          <li><a href="#page1">Menu One <span class="icon"></span></a></li>
-          <li><a href="#">Dropdown</a>
+          <li><a href="index.html">Home <span class="icon"></span></a></li>
+          <li><a href="#">Daerah</a>
             <ul class="list-unstyled">
-							<li><a href="#page2">Jakarta</a></li>
-							<li><a href="#page1">Jawa barat </a></li>
-							<li><a href="#page3">Jawa Tengah</a></li>
-							<li><a href="#page4">Jawa Timur</a><li>
-							<li><a href="#page5">Jogjakarta</a><li>
-							<li><a href="#">Bali</a></li>
-							<li><a href="#">NTB</a></li>
-							<li><a href="#">NTT</a></li>
-							<li><a href="#">Papua</a></li>
+                <li class="sub-nav"><a href="#page1">Jawa Barat<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Jakarta<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
             </ul>
           </li>
           <li><a href="#">Menu Four <span class="icon"></span></a></li>
@@ -49,59 +69,99 @@
         </ul>
       </nav>
 
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
         <!--Include your brand here-->
-        <a class="navbar-brand" href="#">Lagu lagu Nusantara</a>
+        <a class="navbar-brand" href="index.html">Taman Lagu Nusantara</a>
         <div class="navbar-header pull-right">
           <a id="nav-expander" class="nav-expander fixed">
             MENU &nbsp;<i class="fa fa-bars fa-lg white"></i>
           </a>
         </div>
     </div>
-<br>
-<div class="container">
-	<div id="pageContent">
-		<h1> this web on process developing </h1>
-		<div class="progress progress-striped active">
-		  <div class="progress-bar" style="width: 45%"></div>
-		</div>
-</div>
-</div>
 
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-		<script src="js/jquery.navgoco.js"></script>
-		<script src="js/main.js"></script>
-		<script>
-		$(document).ready(function(){
-			 //Navigation Menu Slider
-				$('#nav-expander').on('click',function(e){
-					e.preventDefault();
-					$('body').toggleClass('nav-expanded');
-				});
-				$('#nav-close').on('click',function(e){
-					e.preventDefault();
-					$('body').removeClass('nav-expanded');
-				});
-				// Initialize navgoco with default options
-				$(".main-menu").navgoco({
-						caret: '<span class="caret"></span>',
-						accordion: false,
-						openClass: 'open',
-						save: true,
-						cookie: {
-								name: 'navgoco',
-								expires: false,
-								path: '/'
-						},
-						slide: {
-								duration: 300,
-								easing: 'swing'
-						}
-				});
-			});
-			</script>
-	</body>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Taman Lagu Nusantara</h1>
+        <p>Ayo kita lestarikan lagu-lagu Nusantara untuk menuju Indonesia Jaya</p>
+      </div>
+    </div>
+        <div id="pageContent">
+          		<div id="googleMap" style="width:100%;height:480px"></div>
+              <br>
+              <section id="team" class="bg-light-gray" style="background-image:url(img/team/bgimg.jpg)">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-12 text-center">
+                              <h3 class="section-heading">Cari dan dengarkan lagu daerah yang ada di Indonesia disini...</h3>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-8 col-lg-offset-2 text-left">
+                              <p class="large text-muted" style="color:#FFF">Terdapat banyak lagu-lagu pilihan yang bisa dimainkan. <br>
+                              Lagu tersebut dikumpulkan berdasarkan wilayah-wilayahnya pada setiap provinsi yang ada. <br>
+                              Untuk memulainya, silahkan klik wilayah yang diinginkan pada peta di atas!</p>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+
+          		<h1> this web on process developing </h1>
+          		<div class="progress progress-striped active">
+          		  <div class="progress-bar" style="width: 45%"></div>
+          		</div>
+          </div>
+      <hr>
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="js/jquery.navgoco.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+       //Navigation Menu Slider
+        $('#nav-expander').on('click',function(e){
+      		e.preventDefault();
+      		$('body').toggleClass('nav-expanded');
+      	});
+      	$('#nav-close').on('click',function(e){
+      		e.preventDefault();
+      		$('body').removeClass('nav-expanded');
+      	});
+
+
+      	// Initialize navgoco with default options
+        $(".main-menu").navgoco({
+            caret: '<span class="caret"></span>',
+            accordion: false,
+            openClass: 'open',
+            save: true,
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+
+      });
+      </script>
+
+
+
+    </body>
 </html>
