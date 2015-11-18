@@ -22,7 +22,10 @@
         var jabar=new google.maps.LatLng(-6.9032739,107.5731165);
         var jakarta= new google.maps.LatLng(-6.2293867,106.6894293);
         var jateng= new google.maps.LatLng(-7.3030411,109.0019967);
+        var jambi= new google.maps.LatLng(-1.7525674,101.6714816);
         var markerjabar;
+        var markerjakarta;
+        var markerjambi;
         function initialize()
         {
         var mapProp = {
@@ -32,7 +35,7 @@
           };
 
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
+        //jabar
         var markerjabar=new google.maps.Marker({
           position:jabar,
           animation:google.maps.Animation.BOUNCE
@@ -42,6 +45,28 @@
         google.maps.event.addListener(markerjabar, 'click', function() {
           window.location.href = "#page1"
         });
+        //jakarta
+        var markerjakarta=new google.maps.Marker({
+          position:jakarta,
+          animation:google.maps.Animation.BOUNCE
+          });
+        markerjakarta.setMap(map);
+
+        google.maps.event.addListener(markerjakarta, 'click', function() {
+          window.location.href = "#page2"
+        });
+
+        //jambi
+        var markerjambi=new google.maps.Marker({
+          position: jambi,
+          animation:google.maps.Animation.BOUNCE
+          });
+        markerjambi.setMap(map);
+
+        google.maps.event.addListener(markerjambi, 'click', function() {
+          window.location.href = "#page3"
+        });
+
         }
         google.maps.event.addDomListener(window, 'load', initialize);
   </script>
@@ -58,8 +83,8 @@
           <li><a href="#">Daerah</a>
             <ul class="list-unstyled">
                 <li class="sub-nav"><a href="#page1">Jawa Barat<span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Jakarta<span class="icon"></span></a></li>
-                <li class="sub-nav"><a href="#">Sub Menu Three <span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#page2">Jakarta<span class="icon"></span></a></li>
+                <li class="sub-nav"><a href="#page3">Jambi <span class="icon"></span></a></li>
                 <li class="sub-nav"><a href="#">Sub Menu Four <span class="icon"></span></a></li>
                 <li class="sub-nav"><a href="#">Sub Menu Five <span class="icon"></span></a></li>
             </ul>
