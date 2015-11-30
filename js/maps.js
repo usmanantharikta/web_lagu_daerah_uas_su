@@ -8,10 +8,10 @@ var yogyakarta= new google.maps.LatLng(-7.803164,110.3398252);
 var bali= new google.maps.LatLng(-8.4543385,114.5110274);
 var ntb=new google.maps.LatLng(-8.5906453,116.4566959);
 var ntt=new google.maps.LatLng(-9.5228988,119.8147964);
-var maluku= new google.maps.LatLng(-3.7468431,126.7041585);
-var papuabarat= new google.maps.LatLng(-1.6175776,130.0338422);
-var papua=new google.maps.LatLng(-4.8482924,133.3087428);
-var malukuutara=new google.maps.LatLng(0.3943875,125.753993);
+var maluku= new google.maps.LatLng(-3.236936, 130.120437);
+var papuabarat= new google.maps.LatLng(-1.348511, 133.131524);
+var papua=new google.maps.LatLng(-4.202143, 138.030954);
+var malukuutara=new google.maps.LatLng(1.586196, 127.676145);
 //sulsel
 var sulut =new google.maps.LatLng(2.5237219,122.178502);
 var sulbar =new google.maps.LatLng(-2.813456, 119.232076);
@@ -21,17 +21,18 @@ var sulsel= new google.maps.LatLng(-3.596254, 120.084581);
 var gorontalo=new google.maps.LatLng(0.721164, 122.390256);
 //kalimantan
 var kalut =new google.maps.LatLng(2.7279972,115.1511898);
-var kalbar =new google.maps.LatLng(-3.106136, 115.323876);
+var kalbar =new google.maps.LatLng(-0.248611, 111.380722);
 var kalteng = new google.maps.LatLng(-1.625663, 113.273269);//blm
 var kalsel=new google.maps.LatLng(-3.062254, 115.307397);
 var kaltim =new google.maps.LatLng(0.603868, 116.460966);
 //sumatra
 var sumut =new google.maps.LatLng(2.005570, 99.112642);
-var sumbar=new google.maps.LatLng(-3.346058, 103.916659);
+var sumbar=new google.maps.LatLng(-0.709382, 100.811820);
 var sumsel=new google.maps.LatLng(-3.302187, 103.845247);//blm
 var aceh=new google.maps.LatLng(4.708300, 96.774579);
 var riau= new google.maps.LatLng(0.298037, 101.682171);
 var lampung=new google.maps.LatLng(-4.572643, 105.446186);
+var bengkulu=new google.maps.LatLng(-3.552648, 102.245827);
 var banten=new google.maps.LatLng(-6.404830, 106.129367);
 
 function initialize()
@@ -316,18 +317,18 @@ google.maps.event.addListener(markersulsel, 'click', function() {
 });
 //gorontalo
 var markergorontalo=new google.maps.Marker({
-  position: sulsel,
+  position: gorontalo,
   animation:google.maps.Animation.BOUNCE
   });
-markersulsel.setMap(map);
+markergorontalo.setMap(map);
 
 var infowindow = new google.maps.InfoWindow({
-content:"Sulawesi Selatan"
+content:"Gorontalo"
 });
-infowindow.open(map,markersulsel);
+infowindow.open(map,markergorontalo);
 
-google.maps.event.addListener(markersulsel, 'click', function() {
-  window.location.href = "#page17"
+google.maps.event.addListener(markergorontalo, 'click', function() {
+  window.location.href = "#page18"
 });
 
 
@@ -344,39 +345,53 @@ content:"Kalimantan Utara"
 infowindow.open(map,markerkalut);
 
 google.maps.event.addListener(markerkalut, 'click', function() {
-  window.location.href = "#page15"
+  window.location.href = "#page19"
 });
-//sulut
-var markersumut=new google.maps.Marker({
-  position: sumut,
+//kalteng
+var markerkalteng=new google.maps.Marker({
+  position: kalteng,
   animation:google.maps.Animation.BOUNCE
   });
-markersumut.setMap(map);
+markerkalteng.setMap(map);
 
 var infowindow = new google.maps.InfoWindow({
-content:"Sumatra Utara"
+content:"Kalimantan Tengah"
 });
-infowindow.open(map,markersumut);
+infowindow.open(map,markerkalteng);
 
-google.maps.event.addListener(markersumut, 'click', function() {
-  window.location.href = "#page15"
+google.maps.event.addListener(markerkalteng, 'click', function() {
+  window.location.href = "#page20"
 });
-//sumbar
-var markersumbar=new google.maps.Marker({
-  position: sumbar,
+//kalsel
+var markerkalsel=new google.maps.Marker({
+  position: kalsel,
   animation:google.maps.Animation.BOUNCE
   });
-markersumbar.setMap(map);
+markerkalsel.setMap(map);
 
 var infowindow = new google.maps.InfoWindow({
-content:"Sumatra Barat"
+content:"Kalimantan Selatan"
 });
-infowindow.open(map,markersumbar);
+infowindow.open(map,markerkalsel);
 
-google.maps.event.addListener(markersumbar, 'click', function() {
-  window.location.href = "#page15"
+google.maps.event.addListener(markerkalsel, 'click', function() {
+  window.location.href = "#page21"
 });
+//kaltim
+var markerkaltim=new google.maps.Marker({
+  position: kaltim,
+  animation:google.maps.Animation.BOUNCE
+  });
+markerkaltim.setMap(map);
 
+var infowindow = new google.maps.InfoWindow({
+content:"Kalimantan Timur"
+});
+infowindow.open(map,markerkaltim);
+
+google.maps.event.addListener(markerkaltim, 'click', function() {
+  window.location.href = "#page22"
+});
 
 //kalbar
 var markerkalbar=new google.maps.Marker({
@@ -391,8 +406,133 @@ content:"Kalimantan Barat"
 infowindow.open(map,markerkalbar);
 
 google.maps.event.addListener(markerkalbar, 'click', function() {
-  window.location.href = "#page15"
+  window.location.href = "#page23"
 });
+
+//sumut
+var markersumut=new google.maps.Marker({
+  position: sumut,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersumut.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sumatra Utara"
+});
+infowindow.open(map,markersumut);
+
+google.maps.event.addListener(markersumut, 'click', function() {
+  window.location.href = "#page24"
+});
+//sumbar
+var markersumbar=new google.maps.Marker({
+  position: sumbar,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersumbar.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sumatra Barat"
+});
+infowindow.open(map,markersumbar);
+
+google.maps.event.addListener(markersumbar, 'click', function() {
+  window.location.href = "#page25"
+});
+//sumsel
+var markersumsel=new google.maps.Marker({
+  position: sumsel,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersumsel.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sumatra Selatan"
+});
+infowindow.open(map,markersumsel);
+
+google.maps.event.addListener(markersumsel, 'click', function() {
+  window.location.href = "#page26"
+});
+
+//aceh
+var markersaceh=new google.maps.Marker({
+  position: aceh,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersaceh.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Aceh"
+});
+infowindow.open(map,markersaceh);
+
+google.maps.event.addListener(markersaceh, 'click', function() {
+  window.location.href = "#page27"
+});
+
+//riau
+var markerriau=new google.maps.Marker({
+  position: riau,
+  animation:google.maps.Animation.BOUNCE
+  });
+markerriau.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Riau"
+});
+infowindow.open(map,markerriau);
+
+google.maps.event.addListener(markerriau, 'click', function() {
+  window.location.href = "#page28"
+});
+
+//lampung
+var markerlampung=new google.maps.Marker({
+  position: lampung,
+  animation:google.maps.Animation.BOUNCE
+  });
+markerlampung.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Lampung"
+});
+infowindow.open(map,markerlampung);
+
+google.maps.event.addListener(markerlampung, 'click', function() {
+  window.location.href = "#page29"
+});
+//banten
+var markerbanten=new google.maps.Marker({
+  position: banten,
+  animation:google.maps.Animation.BOUNCE
+  });
+markerbanten.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Banten"
+});
+infowindow.open(map,markerbanten);
+
+google.maps.event.addListener(markerbanten, 'click', function() {
+  window.location.href = "#page30"
+});
+//bengkulu
+var markerbengkulu=new google.maps.Marker({
+  position: bengkulu,
+  animation:google.maps.Animation.BOUNCE
+  });
+markerbengkulu.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Bengkulu"
+});
+infowindow.open(map,markerbengkulu);
+
+google.maps.event.addListener(markerbengkulu, 'click', function() {
+  window.location.href = "#page30"
+});
+
 
 
 //end
