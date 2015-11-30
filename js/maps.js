@@ -33,6 +33,7 @@ var aceh=new google.maps.LatLng(4.708300, 96.774579);
 var riau= new google.maps.LatLng(0.298037, 101.682171);
 var lampung=new google.maps.LatLng(-4.572643, 105.446186);
 var banten=new google.maps.LatLng(-6.404830, 106.129367);
+
 function initialize()
 {
 var mapProp = {
@@ -252,6 +253,84 @@ infowindow.open(map,markersulut);
 google.maps.event.addListener(markersulut, 'click', function() {
   window.location.href = "#page14"
 });
+
+//sulbar
+var markersulbar=new google.maps.Marker({
+  position: sulbar,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersulbar.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sulawesi Barat"
+});
+infowindow.open(map,markersulbar);
+
+google.maps.event.addListener(markersulbar, 'click', function() {
+  window.location.href = "#page15"
+});
+//sulteng
+var markersulteng=new google.maps.Marker({
+  position: sulteng,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersulteng.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sulawesi Tengah"
+});
+infowindow.open(map,markersulteng);
+
+google.maps.event.addListener(markersulteng, 'click', function() {
+  window.location.href = "#page16"
+});
+//sultengg
+var markersultengg=new google.maps.Marker({
+  position: sultengg,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersultengg.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sulawesi Tenggara"
+});
+infowindow.open(map,markersultengg);
+
+google.maps.event.addListener(markersultengg, 'click', function() {
+  window.location.href = "#page17"
+});
+//sulsel
+var markersulsel=new google.maps.Marker({
+  position: sulsel,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersulsel.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sulawesi Selatan"
+});
+infowindow.open(map,markersulsel);
+
+google.maps.event.addListener(markersulsel, 'click', function() {
+  window.location.href = "#page17"
+});
+//gorontalo
+var markergorontalo=new google.maps.Marker({
+  position: sulsel,
+  animation:google.maps.Animation.BOUNCE
+  });
+markersulsel.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+content:"Sulawesi Selatan"
+});
+infowindow.open(map,markersulsel);
+
+google.maps.event.addListener(markersulsel, 'click', function() {
+  window.location.href = "#page17"
+});
+
+
 //kalut
 var markerkalut=new google.maps.Marker({
   position: kalut,
@@ -297,6 +376,8 @@ infowindow.open(map,markersumbar);
 google.maps.event.addListener(markersumbar, 'click', function() {
   window.location.href = "#page15"
 });
+
+
 //kalbar
 var markerkalbar=new google.maps.Marker({
   position: kalbar,
@@ -313,21 +394,6 @@ google.maps.event.addListener(markerkalbar, 'click', function() {
   window.location.href = "#page15"
 });
 
-//sulbar
-var markersulbar=new google.maps.Marker({
-  position: sulbar,
-  animation:google.maps.Animation.BOUNCE
-  });
-markersulbar.setMap(map);
-
-var infowindow = new google.maps.InfoWindow({
-content:"Sulawesi Barat"
-});
-infowindow.open(map,markersulbar);
-
-google.maps.event.addListener(markersulbar, 'click', function() {
-  window.location.href = "#page15"
-});
 
 //end
 
