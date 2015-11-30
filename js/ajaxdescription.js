@@ -300,3 +300,27 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "pages/jambi/TimangTimangAnakkuSayang.html", true);
 xhttp.send();
 }
+
+//gundul
+
+function gundulpacul() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("desciption").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "pages/jateng/GundulPacul.html", true);
+xhttp.send();
+}
+// lir
+function lirilir() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("desciption").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "pages/jateng/LirIlir.html", true);
+xhttp.send();
+}
