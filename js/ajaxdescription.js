@@ -368,3 +368,47 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "pages/jateng/gambang_suling.html", true);
 xhttp.send();
 }
+//cublak
+function cublek() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("desciption").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "pages/jatim/cublak_cublak_suweng.html", true);
+xhttp.send();
+}
+//lindri
+function lindri() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("desciption").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "pages/jatim/lindri.html", true);
+xhttp.send();
+}
+//rek ayo
+function rekayo() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("desciption").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "pages/jatim/rek_ayo_rek.html", true);
+xhttp.send();
+}
+//tanduk
+function taduk() {
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+    document.getElementById("desciption").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "pages/jatim/taduk_majeng.html", true);
+xhttp.send();
+}
